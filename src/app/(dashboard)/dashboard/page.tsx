@@ -2,8 +2,12 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { HomeIcon, TrophyIcon, Bars3Icon, UserCircleIcon, PresentationChartLineIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
+import {
+  ComputerDesktopIcon,
+  CodeBracketSquareIcon,
+  CircleStackIcon,
+  PresentationChartLineIcon,
+} from '@heroicons/react/24/outline';
 import SidebarDashboard from '@/components/dashboard/Sidebar';
 import NavbarDashboard from '@/components/dashboard/Navbar';
 
@@ -31,25 +35,45 @@ export default function Dashboard() {
               </div>
             </div>
             <div className='grid grid-cols-4 gap-x-4'>
-              <div className='card h-32 w-full bg-gradient-to-tl from-blue-900 to-black'></div>
-              <div className='card h-32 w-full bg-gradient-to-tl from-blue-900 to-black'></div>
-              <div className='card h-32 w-full bg-gradient-to-tl from-blue-900 to-black'></div>
-              <div className='card h-32 w-full bg-gradient-to-tl from-blue-900 to-black'></div>
+              <div className='card h-32 w-full p-4 flex justify-between text-white bg-gradient-to-tl from-blue-900 to-black'>
+                <div className=''>
+                  <h3 className='text-4xl font-semibold'>8</h3>
+                  <p className='mt-3 text-lg'>Frameworks</p>
+                </div>
+                <div className=''>
+                  <CodeBracketSquareIcon className='h-20 w-20 text-white text-opacity-20' />
+                </div>
+              </div>
+              <div className='card h-32 w-full p-4 flex justify-between text-white bg-gradient-to-tl from-blue-900 to-black'>
+                <div className=''>
+                  <h3 className='text-4xl font-semibold'>2</h3>
+                  <p className='mt-3 text-lg'>Databases</p>
+                </div>
+                <div className=''>
+                  <CircleStackIcon className='h-20 w-20 text-white text-opacity-20' />
+                </div>
+              </div>
+              <div className='card h-32 w-full p-4 flex justify-between text-white bg-gradient-to-tl from-blue-900 to-black'>
+                <div className=''>
+                  <h3 className='text-4xl font-semibold'>5</h3>
+                  <p className='mt-3 text-lg'>Softwares</p>
+                </div>
+                <div className=''>
+                  <ComputerDesktopIcon className='h-20 w-20 text-white text-opacity-20' />
+                </div>
+              </div>
+              <div className='card h-32 w-full p-4 flex justify-between text-white bg-gradient-to-tl from-blue-900 to-black'>
+                <div className=''>
+                  <h3 className='text-4xl font-semibold'>23</h3>
+                  <p className='mt-3 text-lg'>Projects</p>
+                </div>
+                <div className=''>
+                  <PresentationChartLineIcon className='h-20 w-20 text-white text-opacity-20' />
+                </div>
+              </div>
             </div>
           </main>
         </div>
-        {/* <p className='text-white'>Mahdy</p> */}
-        {/* <div className='absolute bottom-0 left-28 z-0'>
-          <div className='h-96 w-96 bg-blue-500 bg-opacity-90 rounded-full blur-3xl'></div>
-        </div> */}
-        {/* <div className='absolute top-40 right-40 z-10'>
-          <div className='h-96 w-96 bg-blue-500 rounded-full blur-3xl'></div>
-        </div> */}
-        {/* <div className='absolute inset-0 flex items-center justify-center'>
-          <div className='h-96 w-96 bg-blue-500 rounded-full blur-3xl'></div>
-          <div className='h-96 w-96 bg-blue-500 rounded-full blur-3xl'></div>
-          <div className='h-96 w-96 bg-blue-500 rounded-full blur-3xl'></div>
-        </div> */}
       </div>
     </>
   );
