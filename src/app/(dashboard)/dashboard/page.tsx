@@ -17,21 +17,21 @@ export default function Dashboard() {
             <div className='mt-12 flex flex-col'>
               <Link
                 href='#'
-                className='px-2 py-4 text-sky-500 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:bg-opacity-10 bg-white bg-opacity-10 border-sky-500'
+                className='px-2 py-4 text-sky-500 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:bg-opacity-10 hover:transition-all bg-white bg-opacity-10 border-sky-500'
               >
                 <HomeIcon className='h-6 w-6' />
                 <p className='my-auto'>Dashboard</p>
               </Link>
               <Link
                 href='#'
-                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:bg-opacity-10'
+                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:transition-all hover:bg-opacity-10'
               >
                 <TrophyIcon className='h-6 w-6' />
                 <p className='my-auto'>Skills</p>
               </Link>
               <Link
                 href='#'
-                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:bg-opacity-10'
+                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:transition-all hover:bg-opacity-10'
               >
                 <PresentationChartLineIcon className='h-6 w-6' />
                 <p className='my-auto'>Projects</p>
