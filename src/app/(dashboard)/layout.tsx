@@ -1,5 +1,10 @@
+'use client';
+
+import NavbarDashboard from '@/components/dashboard/Navbar';
+import SidebarDashboard from '@/components/dashboard/Sidebar';
+import { siteMetadataDashboard } from '@/config/siteConfig';
 import { Poppins } from 'next/font/google';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -7,16 +12,28 @@ const poppins = Poppins({
   subsets: ['latin'],
 });
 
-export const metadata = {
-  title: 'Dashboard | Mahdy Mubasyir',
-  description: 'Mahdy Mubasyir Portfolio',
-};
-
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
+
+  const toogleOpenSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   return (
     <html lang='en'>
-      <body className={poppins.className}>
-        <main>{children}</main>
+      <head>
+        <title>{siteMetadataDashboard.title}</title>
+      </head>
+      <body className={`bg-black ${poppins.className}`}>
+        <div className='flex h-screen relative'>
+          {/* Sidebar */}
+          <SidebarDashboard isSidebarOpen={isSidebarOpen} />
+          <div className='flex-1 flex flex-col overflow-hidden'>
+            {/* Navbar */}
+            <NavbarDashboard onToogleSidebar={toogleOpenSidebar} />
+            <main className='px-5 mt-5'>{children}</main>
+          </div>
+        </div>
+        {/* <main>{children}</main> */}
       </body>
     </html>
   );

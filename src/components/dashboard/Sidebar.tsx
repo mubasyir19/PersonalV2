@@ -1,13 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import React from 'react';
 import { HomeIcon, TrophyIcon, PresentationChartLineIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface SidebarProps {
   isSidebarOpen: boolean;
 }
 
 export default function SidebarDashboard({ isSidebarOpen }: SidebarProps) {
+  const pathname = usePathname();
+
+  const linkActive = (path: string) => pathname.startsWith(path);
+
   return (
     <>
       {isSidebarOpen ? (
@@ -19,22 +26,34 @@ export default function SidebarDashboard({ isSidebarOpen }: SidebarProps) {
             </div>
             <div className='mt-12 flex flex-col'>
               <Link
-                href='#'
-                className='px-2 py-4 text-sky-500 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:bg-opacity-10 hover:transition-all bg-white bg-opacity-10 border-sky-500'
+                href='/dashboard'
+                className={`px-2 py-4 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:transition-all hover:bg-opacity-10 ${
+                  pathname === '/dashboard'
+                    ? 'text-sky-500 bg-white bg-opacity-10 border-sky-500'
+                    : 'text-white border-transparent'
+                }`}
               >
                 <HomeIcon className='h-6 w-6' />
                 <p className='my-auto'>Dashboard</p>
               </Link>
               <Link
-                href='#'
-                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:transition-all hover:bg-opacity-10'
+                href='/dashboard/skills'
+                className={`px-2 py-4 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:transition-all hover:bg-opacity-10 ${
+                  linkActive('/dashboard/skills')
+                    ? 'text-sky-500 bg-white bg-opacity-10 border-sky-500'
+                    : 'text-white border-transparent'
+                }`}
               >
                 <TrophyIcon className='h-6 w-6' />
                 <p className='my-auto'>Skills</p>
               </Link>
               <Link
-                href='#'
-                className='px-2 py-4 text-white flex gap-x-4 rounded-r-lg border-l-4 border-transparent hover:bg-white hover:transition-all hover:bg-opacity-10'
+                href='/dashboard/projects'
+                className={`px-2 py-4 flex gap-x-4 rounded-r-lg border-l-4 hover:bg-white hover:transition-all hover:bg-opacity-10 ${
+                  linkActive('/dashboard/projects')
+                    ? 'text-sky-500 bg-white bg-opacity-10 border-sky-500'
+                    : 'text-white border-transparent'
+                }`}
               >
                 <PresentationChartLineIcon className='h-6 w-6' />
                 <p className='my-auto'>Projects</p>
