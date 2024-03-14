@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <section className='px-20 mb-20'>
+    <section className='px-12 mb-20'>
       <div className='py-20 w-full'>
         <Image
           src='/images/me.jpeg'
