@@ -8,7 +8,7 @@ export default function Hero() {
       <div className='py-20 w-full'>
         <Image
           src='/images/me.jpeg'
-          className='mx-auto h-52 object-cover p-1 border-2 border-[#006efe]'
+          className='mx-auto h-52 object-cover p-1 border-2 border-[#006efe] hover:transform hover:rotate-360 hover:duration-1000 hover:rounded-full'
           height={200}
           width={200}
           alt='my-pict'
