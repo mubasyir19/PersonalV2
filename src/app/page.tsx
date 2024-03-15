@@ -1,19 +1,16 @@
-'use client';
-
 import About from '@/components/About';
 import Hero from '@/components/Hero';
 import Skill from '@/components/Skill';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <main>
-      <Hero />
+      <div className='h-screen flex items-center'>
+        <h1 className='text-7xl md:rotate-0 md:text-9xl xl:text-[250px] text-center leading-none font-bold bg-texting bg-cover bg-clip-text bg-center text-transparent'>
+          Mahdy Mubasyir
+        </h1>
+      </div>
+      {/* <Hero /> */}
       <About />
       <Skill />
     </main>
