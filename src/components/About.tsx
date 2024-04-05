@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section className='px-3 lg:px-28 text-white'>
+    <section className='px-3 lg:px-28 py-20 text-white'>
       <h1 className='text-2xl lg:text-4xl text-center underline underline-offset-8'>About Me</h1>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
         <div className='mt-12 my-auto'>
