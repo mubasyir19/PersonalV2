@@ -33,7 +33,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <main className='px-5 mt-5'>{children}</main>
           </div>
         </div>
-        {/* <main>{children}</main> */}
       </body>
     </html>
   );

@@ -1,7 +1,36 @@
+'use client';
+
 import { PlusIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+interface SkillType {
+  name: string;
+}
 
 export default function Skills() {
+  const [skills, setSkills] = useState<SkillType[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const dataSkills = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/skill');
+        const data = await response.json();
+        console.log(data);
+        setSkills(data.data);
+      } catch (error) {
+        console.log('Error occured', error);
+        setError('An error occurred while fetching data');
+      }
+      setIsLoading(false);
+    };
+
+    dataSkills();
+  }, []);
+
   return (
     <>
       <div className='flex justify-between mb-5'>
@@ -39,42 +68,42 @@ export default function Skills() {
               </tr>
             </thead>
             <tbody>
-              <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
-                <td className='px-6 py-4 font-medium text-gray-900 dark:text-white'>1</td>
-                <td className='px-6 py-4'>HTML</td>
-                <td className='px-6 py-4 flex gap-x-4'>
-                  <a href='#' className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
-                    Edit
-                  </a>
-                  <a href='#' className='font-medium text-red-600 dark:text-red-500 hover:underline'>
-                    hapus
-                  </a>
-                </td>
-              </tr>
-              <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
-                <td className='px-6 py-4 font-medium text-gray-900 dark:text-white'>2</td>
-                <td className='px-6 py-4'>CSS</td>
-                <td className='px-6 py-4 flex gap-x-4'>
-                  <a href='#' className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
-                    Edit
-                  </a>
-                  <a href='#' className='font-medium text-red-600 dark:text-red-500 hover:underline'>
-                    hapus
-                  </a>
-                </td>
-              </tr>
-              <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
-                <td className='px-6 py-4 font-medium text-gray-900 dark:text-white'>3</td>
-                <td className='px-6 py-4'>JavaScript</td>
-                <td className='px-6 py-4 flex gap-x-4'>
-                  <a href='#' className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
-                    Edit
-                  </a>
-                  <a href='#' className='font-medium text-red-600 dark:text-red-500 hover:underline'>
-                    hapus
-                  </a>
-                </td>
-              </tr>
+              {isLoading ? (
+                <>
+                  <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
+                    <td className='px-6 py-4 font-medium text-gray-900 dark:text-white text-center' colSpan={3}>
+                      Loading...
+                    </td>
+                  </tr>
+                </>
+              ) : error ? (
+                <>
+                  <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
+                    <td className='px-6 py-4 font-medium text-gray-900 dark:text-white text-center' colSpan={3}>
+                      An error occured failed get data ...
+                    </td>
+                  </tr>
+                </>
+              ) : (
+                <>
+                  {skills.map((skill, index) => (
+                    <>
+                      <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
+                        <td className='px-6 py-4 font-medium text-gray-900 dark:text-white'>{index + 1}</td>
+                        <td className='px-6 py-4'>{skill.name}</td>
+                        <td className='px-6 py-4 flex gap-x-4'>
+                          <a href='#' className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                            Edit
+                          </a>
+                          <a href='#' className='font-medium text-red-600 dark:text-red-500 hover:underline'>
+                            hapus
+                          </a>
+                        </td>
+                      </tr>
+                    </>
+                  ))}
+                </>
+              )}
             </tbody>
           </table>
         </div>

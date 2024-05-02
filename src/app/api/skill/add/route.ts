@@ -7,7 +7,7 @@ type CategorySkill = 'Language' | 'Framework' | 'Database' | 'Software';
 
 interface AddSkillRequest {
   name: string;
-  picture: any;
+  picture: string;
   category: CategorySkill;
 }
 
@@ -15,24 +15,17 @@ const prisma = new PrismaClient();
 
 export const POST = async (req: NextRequest) => {
   try {
-    const { name, picture, category }: AddSkillRequest = await req.json();
+    const { name, category, picture }: AddSkillRequest = await req.json();
 
-    // Menyimpan file gambar yang diunggah ke folder uploads
-    const pictureFileName = `${Date.now()}-${picture.name}`;
-    const picturePath = path.join(process.cwd(), 'uploads', pictureFileName);
-    const pictureStream = createWriteStream(picturePath);
-
-    // Menulis data gambar ke dalam stream
-    pictureStream.write(picture.data);
-    pictureStream.end();
-
-    const addSkill = prisma.skill.create({
+    const addSkill = await prisma.skill.create({
       data: {
         name,
+        picture,
         category,
-        picture: picturePath,
       },
     });
+
+    console.log(addSkill);
 
     return NextResponse.json({ message: 'success add data', data: addSkill });
   } catch (error) {

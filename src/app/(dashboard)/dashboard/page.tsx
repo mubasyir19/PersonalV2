@@ -18,7 +18,7 @@ export default function Dashboard() {
             </Link>
           </div>
         </div>
-        <div className='grid grid-cols-4 gap-x-4'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-x-4'>
           <div className='card h-32 w-full p-4 flex justify-between text-white bg-gradient-to-tl from-blue-900 to-black'>
             <div className=''>
               <h3 className='text-4xl font-semibold'>8</h3>
