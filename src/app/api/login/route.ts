@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { compareSync } from 'bcrypt';
+import { error } from 'console';
 import { sign } from 'jsonwebtoken';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -16,9 +17,14 @@ export const GET = async (req: NextRequest) => {
 
 export const POST = async (req: NextRequest) => {
   const { username, password }: LoginRequest = await req.json();
+
+  if (!username || !password) {
+    return NextResponse.json({ message: 'Username and password are required.' });
+  }
+
   const checkUser = await prisma.account.findFirst({ where: { username } });
   if (checkUser) {
-    const isPasswordValid: any = compareSync.bind(password, checkUser.password);
+    const isPasswordValid: boolean = compareSync(password, checkUser.password);
     if (isPasswordValid) {
       const user = {
         id: checkUser.id,
@@ -36,5 +42,5 @@ export const POST = async (req: NextRequest) => {
     }
   }
 
-  return NextResponse.json({ message: 'Account not found' });
+  return NextResponse.json({ message: 'Account not found' }, { status: 400 });
 };
