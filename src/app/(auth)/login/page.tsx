@@ -34,7 +34,8 @@ export default function Login() {
 
         console.log('TOKEN => ', data.token);
 
-        localStorage.setItem('token', data.token);
+        const tokenBase64 = btoa(data.token);
+        localStorage.setItem('token', tokenBase64);
         router.push('/dashboard');
       } else {
         Swal.fire({
