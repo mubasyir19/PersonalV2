@@ -27,7 +27,7 @@ export const POST = async (req: NextRequest) => {
     const { fullname, username, password, biography, job }: RegisterRequest = await req.json();
 
     // Periksa apakah fullname, username, dan password ada
-    if (!fullname || !username || !password || biography || job) {
+    if (!fullname || !username || !password || !biography || !job) {
       return NextResponse.json({ message: 'fullname, username, password, biography, and job are required' });
     }
 
