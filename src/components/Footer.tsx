@@ -19,19 +19,30 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-6 text-white lg:my-auto">
-        <ul className="flex justify-center gap-x-10">
+        <ul className="flex justify-center gap-x-10 lg:gap-x-14">
           <li>
-            <Link href="">About</Link>
+            <Link href="#" className="hover:text-blue-600">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="">Skills</Link>
+            <Link href="#" className="hover:text-blue-600">
+              Skills
+            </Link>
           </li>
           <li>
-            <Link href="">Project</Link>
+            <Link href="#" className="hover:text-blue-600">
+              Exprerience
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="hover:text-blue-600">
+              Project
+            </Link>
           </li>
         </ul>
       </div>
-      <p className="mt-6 text-center text-white lg:my-auto">
+      <p className="mt-6 text-center text-xs text-white lg:my-auto">
         &copy;Copyright 2024. By Maher
       </p>
     </footer>

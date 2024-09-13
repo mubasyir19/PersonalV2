@@ -10,7 +10,7 @@ export default function Skill() {
     AOS.init();
   }, []);
   return (
-    <section className="mt-12 px-3 text-white lg:px-28">
+    <section className="mx-auto mt-12 px-3 text-white lg:px-28 2xl:w-3/4">
       <h1 className="mb-2 text-center text-2xl underline underline-offset-8 lg:text-4xl">
         My Skills
       </h1>
