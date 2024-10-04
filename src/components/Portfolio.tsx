@@ -33,7 +33,7 @@ export default function Portfolio() {
         })}
       </div>
       <p className="my-4 text-xl">Design</p>
-      <p className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {listDesign.map((design) => {
           return (
             <div
@@ -54,7 +54,7 @@ export default function Portfolio() {
             </div>
           );
         })}
-      </p>
+      </div>
     </section>
   );
 }
