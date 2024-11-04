@@ -4,7 +4,7 @@ import React from "react";
 export default function Contact() {
   return (
     <section className="mx-auto mt-12 px-3 text-white lg:px-28 2xl:w-3/4">
-      <div className="flex flex-col gap-x-12 rounded-2xl border-2 border-[#002352] bg-black p-2 shadow-2xl md:flex-row">
+      <div className="flex flex-col gap-x-12 overflow-hidden rounded-2xl border-2 border-[#002352] bg-black p-2 shadow-2xl md:flex-row">
         <div className="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-[#002352] p-10 text-white md:w-2/5">
           <div className="text-center md:text-start">
             <h4 className="text-2xl font-semibold">
