@@ -35,8 +35,7 @@ export default function About() {
             alt="my-pict"
           />
           <p className="mx-auto mt-6 w-3/4 text-center text-sm leading-relaxed">
-            Undergraduate Informatics Student Gunadarma University, Programming
-            Enthusiast
+            Full-Stack Web Developer, Programming Enthusiast
           </p>
           <div className="mt-6 flex justify-center gap-x-6">
             <Link href="#" className="my-auto text-white">
