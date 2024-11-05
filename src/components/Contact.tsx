@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -127,7 +129,13 @@ export default function Contact() {
           <div className="absolute bottom-16 right-16 z-10 h-32 w-32 rounded-full bg-[#FFF9F9] bg-opacity-10"></div>
           <div className="absolute -bottom-24 -right-24 z-10 h-64 w-64 rounded-full bg-[#FFF9F9] bg-opacity-10"></div>
         </div>
-        <form className="relative mt-8 px-5 pb-20 md:px-0 lg:mt-16 lg:flex-1 lg:pr-12">
+        <form
+          className="relative mt-8 px-5 pb-20 md:px-0 lg:mt-16 lg:flex-1 lg:pr-12"
+          onSubmit={(event) => {
+            event.preventDefault();
+            alert("under maintenance");
+          }}
+        >
           <div className="grid grid-cols-1 gap-x-10 gap-y-11 lg:grid-cols-2">
             <div className="w-full">
               <label

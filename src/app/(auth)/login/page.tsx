@@ -1,8 +1,13 @@
+"use client";
+
 export default function Login() {
   return (
     <form
       className="flex w-80 flex-col gap-y-4 rounded-lg border border-blue-900 bg-gradient-to-tl from-blue-900 to-black p-4"
-      onSubmit={() => alert("under maintainance")}
+      onSubmit={(event) => {
+        event.preventDefault();
+        alert("under maintenance");
+      }}
     >
       <h2 className="text-center text-2xl font-semibold text-white">Login</h2>
       <div className="form-group">
