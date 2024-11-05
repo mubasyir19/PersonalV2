@@ -64,6 +64,20 @@ export default function Skill() {
           data-aos-duration="2000"
         >
           <Image
+            src="/icons/typescript.png"
+            height={72}
+            width={72}
+            className="mx-auto h-20 w-auto"
+            alt="typescript"
+          />
+          <p className="mt-4 text-xl font-semibold">TypeScript</p>
+        </div>
+        <div
+          className="card rounded-md border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black py-8 text-center"
+          data-aos="flip-left"
+          data-aos-duration="2000"
+        >
+          <Image
             src="/icons/golang.png"
             height={72}
             width={72}
@@ -123,6 +137,20 @@ export default function Skill() {
           data-aos-duration="2000"
         >
           <Image
+            src="/icons/nestjs.png"
+            height={72}
+            width={72}
+            className="mx-auto h-20 w-auto"
+            alt="nestjs"
+          />
+          <p className="mt-4 text-xl font-semibold">Nest JS</p>
+        </div>
+        <div
+          className="card rounded-md border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black py-8 text-center"
+          data-aos="flip-left"
+          data-aos-duration="2000"
+        >
+          <Image
             src="/icons/express.png"
             height={72}
             width={72}
@@ -144,6 +172,20 @@ export default function Skill() {
             alt="react-native"
           />
           <p className="mt-4 text-xl font-semibold">React Native</p>
+        </div>
+        <div
+          className="card rounded-md border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black py-8 text-center"
+          data-aos="flip-left"
+          data-aos-duration="2000"
+        >
+          <Image
+            src="/icons/fiber.png"
+            height={72}
+            width={72}
+            className="mx-auto h-20 w-auto"
+            alt="gofiber"
+          />
+          <p className="mt-4 text-xl font-semibold">GoFiber</p>
         </div>
         <div
           className="card rounded-md border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black py-8 text-center"

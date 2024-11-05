@@ -1,8 +1,15 @@
+"use client";
+
 import { listDesign, portfolios } from "@/data/data";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Portfolio() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     // const portfolioSection = portfolios.map()
     <section className="mx-auto mt-12 px-3 text-white lg:px-28 2xl:w-3/4">
@@ -16,6 +23,7 @@ export default function Portfolio() {
             <div
               key={portoflio.id}
               className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
+              data-aos="zoom-in-up"
             >
               <Image
                 src={portoflio.image}
@@ -39,6 +47,7 @@ export default function Portfolio() {
             <div
               key={design.id}
               className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
+              data-aos="zoom-in-up"
             >
               <Image
                 src={design.image}

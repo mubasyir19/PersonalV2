@@ -1,15 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className="mx-auto px-3 py-20 text-white lg:px-28 2xl:w-3/4">
       <h1 className="text-center text-2xl underline underline-offset-8 lg:text-4xl">
         About Me
       </h1>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="my-auto mt-12">
+        <div
+          className="my-auto mt-12 overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <p className="mb-4 text-justify indent-8 text-lg">
             As a Web Developer, I have experience developing efficient and
             responsive web applications. My main expertise lies in using
@@ -26,7 +38,11 @@ export default function About() {
             experiences and improve application performance.
           </p>
         </div>
-        <div className="my-auto w-full">
+        <div
+          className="my-auto w-full"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <Image
             src="/images/me.jpeg"
             className="mx-auto h-52 border-2 border-[#006efe] object-cover p-1 hover:rotate-360 hover:transform hover:rounded-full hover:duration-1000"
