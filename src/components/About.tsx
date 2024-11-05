@@ -12,7 +12,10 @@ export default function About() {
   }, []);
 
   return (
-    <section className="mx-auto px-3 py-20 text-white lg:px-28 2xl:w-3/4">
+    <section
+      id="about"
+      className="mx-auto px-3 py-20 text-white lg:px-28 2xl:w-3/4"
+    >
       <h1 className="text-center text-2xl underline underline-offset-8 lg:text-4xl">
         About Me
       </h1>

@@ -21,23 +21,18 @@ export default function Footer() {
       <div className="mx-auto mt-6 text-white lg:my-auto">
         <ul className="flex justify-center gap-x-10 lg:gap-x-14">
           <li>
-            <Link href="#" className="hover:text-blue-600">
+            <Link href="#about" className="hover:text-blue-600">
               About
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:text-blue-600">
+            <Link href="#skills" className="hover:text-blue-600">
               Skills
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:text-blue-600">
-              Exprerience
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="hover:text-blue-600">
-              Project
+            <Link href="#portfolio" className="hover:text-blue-600">
+              Projects
             </Link>
           </li>
         </ul>

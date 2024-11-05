@@ -12,7 +12,10 @@ export default function Portfolio() {
   }, []);
   return (
     // const portfolioSection = portfolios.map()
-    <section className="mx-auto mt-12 px-3 text-white lg:px-28 2xl:w-3/4">
+    <section
+      id="portfolio"
+      className="mx-auto mt-12 px-3 text-white lg:px-28 2xl:w-3/4"
+    >
       <h1 className="mb-2 text-center text-2xl underline underline-offset-8 lg:text-4xl">
         My Project
       </h1>
