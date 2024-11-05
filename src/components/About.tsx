@@ -25,14 +25,14 @@ export default function About() {
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <p className="mb-4 text-justify indent-8 text-lg">
+          <p className="mb-4 text-justify indent-8 text-sm md:text-base lg:text-lg">
             As a Web Developer, I have experience developing efficient and
             responsive web applications. My main expertise lies in using
             JavaScript to build powerful and dynamic applications. I am
             currently deepening my knowledge in the field of Web Development,
             especially frontend.
           </p>
-          <p className="mb-4 text-justify indent-8 text-lg">
+          <p className="mb-4 text-justify indent-8 text-sm md:text-base lg:text-lg">
             My experience in web development has allowed me to master basic
             concepts such as HTML, CSS, and JavaScript. I also have expertise in
             using the ExpressJS and NextJS frameworks as well as MySQL and
