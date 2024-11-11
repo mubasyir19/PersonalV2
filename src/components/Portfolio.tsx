@@ -21,51 +21,55 @@ export default function Portfolio() {
       </h1>
       <p className="my-4 text-xl">Website</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {portfolios.map((portoflio) => {
-          return (
-            <div
-              key={portoflio.id}
-              className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
-              data-aos="zoom-in-up"
-            >
-              <Image
-                src={portoflio.image}
-                width={500}
-                height={300}
-                alt="photo-project"
-                className="h-auto w-full rounded-xl object-cover"
-              />
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold">{portoflio.name}</h3>
-                <p className="tex">{portoflio.tools}</p>
+        {portfolios
+          .sort((a, b) => b.id - a.id)
+          .map((portoflio) => {
+            return (
+              <div
+                key={portoflio.id}
+                className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
+                data-aos="zoom-in-up"
+              >
+                <Image
+                  src={portoflio.image}
+                  width={500}
+                  height={300}
+                  alt="photo-project"
+                  className="h-auto w-full rounded-xl object-cover"
+                />
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold">{portoflio.name}</h3>
+                  <p className="tex">{portoflio.tools}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <p className="my-4 text-xl">Design</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {listDesign.map((design) => {
-          return (
-            <div
-              key={design.id}
-              className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
-              data-aos="zoom-in-up"
-            >
-              <Image
-                src={design.image}
-                width={500}
-                height={300}
-                alt="photo-project"
-                className="h-auto w-full rounded-xl object-cover"
-              />
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold">{design.name}</h3>
-                <p className="tex">{design.tools}</p>
+        {listDesign
+          .sort((a, b) => b.id - a.id)
+          .map((design) => {
+            return (
+              <div
+                key={design.id}
+                className="card rounded-2xl border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black p-3"
+                data-aos="zoom-in-up"
+              >
+                <Image
+                  src={design.image}
+                  width={500}
+                  height={300}
+                  alt="photo-project"
+                  className="h-auto w-full rounded-xl object-cover"
+                />
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold">{design.name}</h3>
+                  <p className="tex">{design.tools}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </section>
   );
