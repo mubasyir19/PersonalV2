@@ -80,7 +80,7 @@ export const portfolios = [
     id: 12,
     name: "FurniShop",
     tools: "Next Js, Typescript, TailwindCSS",
-    image: "/images/furnisho.png",
+    image: "/images/furnishop.png",
     link: "https://furnishop-zeta.vercel.app/",
   },
 ];
