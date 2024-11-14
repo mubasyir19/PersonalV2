@@ -65,16 +65,23 @@ export const portfolios = [
   {
     id: 10,
     name: "PT. Artos",
-    tools: "Next Js, Typescript",
+    tools: "Next Js, Typescript, TailwindCSS",
     image: "/images/artos.png",
     link: "https://www.artos.group/",
   },
   {
     id: 11,
     name: "Nineteeninnovation",
-    tools: "Next Js, Typescript",
+    tools: "Next Js, Typescript, TailwindCSS",
     image: "/images/nineteeninnovation.png",
     link: "https://nineteeninnovation.vercel.app/",
+  },
+  {
+    id: 12,
+    name: "FurniShop",
+    tools: "Next Js, Typescript, TailwindCSS",
+    image: "/images/furnisho.png",
+    link: "https://furnishop-zeta.vercel.app/",
   },
 ];
 
