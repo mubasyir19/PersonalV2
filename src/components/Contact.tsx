@@ -70,7 +70,7 @@ export default function Contact() {
                 />
               </svg>
               <p className="my-auto mt-2 md:mt-0">
-                Jl. Kemangsari 1 Gg.H.Wahab no36A, <br /> Jatibening, Bekasi
+                Jatibening, Bekasi, Indonesia
               </p>
             </div>
           </div>
