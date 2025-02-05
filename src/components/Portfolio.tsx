@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -38,7 +39,9 @@ export default function Portfolio() {
                   className="h-auto w-full rounded-xl object-cover"
                 />
                 <div className="mt-4">
-                  <h3 className="text-xl font-semibold">{portoflio.name}</h3>
+                  <Link href={portoflio.link} target="_blank">
+                    <h3 className="text-xl font-semibold">{portoflio.name}</h3>
+                  </Link>
                   <p className="tex">{portoflio.tools}</p>
                 </div>
               </div>
@@ -64,7 +67,9 @@ export default function Portfolio() {
                   className="h-auto w-full rounded-xl object-cover"
                 />
                 <div className="mt-4">
-                  <h3 className="text-xl font-semibold">{design.name}</h3>
+                  <Link href={design.link} target="_blank">
+                    <h3 className="text-xl font-semibold">{design.name}</h3>
+                  </Link>
                   <p className="tex">{design.tools}</p>
                 </div>
               </div>
