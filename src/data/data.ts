@@ -83,6 +83,13 @@ export const portfolios = [
     image: "/images/furnishop.png",
     link: "https://furnishop-zeta.vercel.app/",
   },
+  {
+    id: 13,
+    name: "Heyjong",
+    tools: "Next Js, Typescript, TailwindCSS",
+    image: "/images/heyjong.png",
+    link: "https://heyjong.vercel.app/",
+  },
 ];
 
 export const listDesign = [
