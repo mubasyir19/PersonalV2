@@ -39,9 +39,41 @@ export default function Portfolio() {
                   className="h-auto w-full rounded-xl object-cover"
                 />
                 <div className="mt-4">
-                  <Link href={portoflio.link} target="_blank">
+                  <div className="flex items-center gap-x-3">
                     <h3 className="text-xl font-semibold">{portoflio.name}</h3>
-                  </Link>
+                    <Link href={portoflio.link} target="_blank">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#006efe]"
+                      >
+                        <path
+                          d="M7 3H1V17H15V11"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 9L16 2"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M11 1H17V7"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
                   <p className="tex">{portoflio.tools}</p>
                 </div>
               </div>
@@ -67,9 +99,41 @@ export default function Portfolio() {
                   className="h-auto w-full rounded-xl object-cover"
                 />
                 <div className="mt-4">
-                  <Link href={design.link} target="_blank">
+                  <div className="flex items-center gap-x-3">
                     <h3 className="text-xl font-semibold">{design.name}</h3>
-                  </Link>
+                    <Link href={design.link} target="_blank">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#006efe]"
+                      >
+                        <path
+                          d="M7 3H1V17H15V11"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 9L16 2"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M11 1H17V7"
+                          stroke="currentcolor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
                   <p className="tex">{design.tools}</p>
                 </div>
               </div>
