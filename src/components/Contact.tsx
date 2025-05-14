@@ -2,9 +2,66 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [formContact, setFormContact] = useState({
+    fullname: "",
+    email: "",
+    phoneNumber: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormContact((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (
+      !formContact.fullname ||
+      !formContact.email ||
+      !formContact.subject ||
+      !formContact.message
+    ) {
+      toast.error("Nama, email, dan pesan wajib diisi.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formContact),
+      });
+
+      if (!response.ok) {
+        throw new Error("Gagal mengirim pesan.");
+      }
+
+      setFormContact({
+        fullname: "",
+        email: "",
+        phoneNumber: "",
+        subject: "",
+        message: "",
+      });
+
+      toast.success("Pesan berhasil dikirim!");
+    } catch (error) {
+      toast.error("Terjadi kesalahan. Silakan coba lagi.");
+      console.error(error);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -134,42 +191,26 @@ export default function Contact() {
         </div>
         <form
           className="relative mt-8 px-5 pb-20 md:px-0 lg:mt-16 lg:flex-1 lg:pr-12"
-          onSubmit={(event) => {
-            event.preventDefault();
-            alert("under maintenance");
-          }}
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 gap-x-10 gap-y-11 lg:grid-cols-2">
-            <div className="w-full">
+            <div className="w-full lg:col-span-2">
               <label
-                htmlFor="firstname"
+                htmlFor="fullname"
                 className="text-[#8D8D8D] peer-focus:text-black"
               >
-                First Name
+                Fullname
               </label>
               <br />
               <input
                 type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="John"
+                id="fullname"
+                name="fullname"
+                value={formContact.fullname}
+                onChange={handleChange}
+                required
+                placeholder="Type your name"
                 className="peer mt-3 w-full border-b-2 border-[#002352] bg-black py-1 focus:outline-none"
-              />
-            </div>
-            <div className="w-full">
-              <label
-                htmlFor="lastname"
-                className="text-[#8D8D8D] peer-focus:text-black"
-              >
-                Last Name
-              </label>
-              <br />
-              <input
-                type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Doe"
-                className="mt-3 w-full border-b-2 border-[#002352] bg-black py-1 focus:outline-none"
               />
             </div>
             <div className="w-full">
@@ -184,7 +225,10 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="johnDoe@gmail.com"
+                value={formContact.email}
+                onChange={handleChange}
+                required
+                placeholder="your email"
                 className="mt-3 w-full border-b-2 border-[#002352] bg-black py-1 focus:outline-none"
               />
             </div>
@@ -200,7 +244,9 @@ export default function Contact() {
                 type="text"
                 id="phoneNumber"
                 name="phoneNumber"
-                placeholder="+62 877 402 6818"
+                value={formContact.phoneNumber}
+                onChange={handleChange}
+                placeholder="your phone number"
                 className="mt-3 w-full border-b-2 border-[#002352] bg-black py-1 focus:outline-none"
               />
             </div>
@@ -208,7 +254,31 @@ export default function Contact() {
           <div className="mt-10">
             <p className="font-semibold">Select Subject?</p>
             <div className="mt-3 grid grid-cols-2 gap-x-5 lg:grid-cols-4">
-              <div className="mb-4 flex items-center">
+              {["Question", "Collaboration", "Job Opportunity", "Other"].map(
+                (item) => {
+                  const id = `radio-${item.replace(/\s/g, "").toLowerCase()}`; // id unik
+                  return (
+                    <div key={item} className="mb-4 flex items-center">
+                      <input
+                        id={id}
+                        type="radio"
+                        value={item}
+                        checked={formContact.subject === item}
+                        onChange={handleChange}
+                        name="subject"
+                        className="h-4 w-4"
+                      />
+                      <label
+                        htmlFor={id}
+                        className="ms-2 text-sm font-medium text-white"
+                      >
+                        {item}
+                      </label>
+                    </div>
+                  );
+                },
+              )}
+              {/* <div className="mb-4 flex items-center">
                 <input
                   id="default-radio-1"
                   type="radio"
@@ -267,7 +337,7 @@ export default function Contact() {
                 >
                   General Inquiry
                 </label>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="mt-4">
@@ -278,12 +348,18 @@ export default function Contact() {
               name="message"
               id="message"
               rows={1}
+              value={formContact.message}
+              onChange={handleChange}
+              required
               placeholder="Write your message.."
               className="mt-3 w-full border-b-2 border-[#002352] bg-black py-1 focus:outline-none"
             ></textarea>
           </div>
           <div className="mt-6 flex justify-end">
-            <button className="rounded-md bg-blue-600 px-12 py-3 text-white">
+            <button
+              type="submit"
+              className="rounded-md bg-blue-600 px-12 py-3 text-white"
+            >
               Send Message
             </button>
           </div>
