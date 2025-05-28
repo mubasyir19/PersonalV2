@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Mahdy Mubasyir",
-  description: "Fullstack Web Developer",
+  title: "Mahdy Mubasyir | Fullstack Web Developer",
+  description: "Portofolio Mahdy Mubasyir",
 };
 
 export default function RootLayout({
