@@ -21,6 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="JuFo5khe2cN1UZAVuniKsJd26xIkH6u27FqXgvJbnts"
+        />
+      </head>
       <body className={`${poppins.className} bg-black`}>
         {children}
         <Toaster position="bottom-right" />
