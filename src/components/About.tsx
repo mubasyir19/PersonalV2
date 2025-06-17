@@ -47,10 +47,10 @@ export default function About() {
           data-aos-duration="1000"
         >
           <Image
-            src="/images/me.jpeg"
-            className="mx-auto h-52 border-2 border-[#006efe] object-cover p-1 hover:rotate-360 hover:transform hover:rounded-full hover:duration-1000"
-            height={200}
-            width={200}
+            src="/images/profile.JPG"
+            className="mx-auto size-52 border-2 border-[#006efe] object-cover p-1 hover:rotate-360 hover:transform hover:rounded-full hover:duration-1000"
+            height={1080}
+            width={1080}
             alt="my-pict"
           />
           <p className="mx-auto mt-6 w-3/4 text-center text-sm leading-relaxed">
