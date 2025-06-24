@@ -97,6 +97,13 @@ export const portfolios = [
     image: "/images/heyjong.png",
     link: "https://heyjong.vercel.app/",
   },
+  {
+    id: 15,
+    name: "Beresin",
+    tools: "Next Js, Typescript, TailwindCSS",
+    image: "/images/beresin.png",
+    link: "https://github.com/mubasyir19/Beresin",
+  },
 ];
 
 export const listDesign = [
