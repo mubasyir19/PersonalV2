@@ -100,9 +100,16 @@ export const portfolios = [
   {
     id: 15,
     name: "Beresin",
-    tools: "Next Js, Typescript, TailwindCSS",
+    tools: "Next Js, Typescript, TailwindCSS, Express, Prisma ORM, PostgreSQL",
     image: "/images/beresin.png",
     link: "https://github.com/mubasyir19/Beresin",
+  },
+  {
+    id: 16,
+    name: "Absen Sekretariat",
+    tools: "Next Js, Typescript, TailwindCSS, Express, Prisma ORM, PostgreSQL",
+    image: "/images/sekretariat.png",
+    link: "https://github.com/mubasyir19/Absen-Sekre-Heyjong",
   },
 ];
 
