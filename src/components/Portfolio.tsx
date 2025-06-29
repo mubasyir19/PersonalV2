@@ -36,7 +36,7 @@ export default function Portfolio() {
                   width={500}
                   height={300}
                   alt="photo-project"
-                  className="h-auto w-full rounded-xl object-cover"
+                  className="h-60 w-full rounded-xl object-cover lg:h-80"
                 />
                 <div className="mt-4">
                   <div className="flex items-center gap-x-3">

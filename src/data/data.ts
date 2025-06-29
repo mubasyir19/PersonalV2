@@ -111,6 +111,13 @@ export const portfolios = [
     image: "/images/sekretariat.png",
     link: "https://github.com/mubasyir19/Absen-Sekre-Heyjong",
   },
+  {
+    id: 17,
+    name: "TokoKu | Online Store",
+    tools: "Next Js, Typescript, TailwindCSS, Express, Prisma ORM, MySQL",
+    image: "/images/toko-online.png",
+    link: "https://github.com/mubasyir19/TokoKu-Web",
+  },
 ];
 
 export const listDesign = [
