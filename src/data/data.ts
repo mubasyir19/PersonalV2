@@ -118,6 +118,13 @@ export const portfolios = [
     image: "/images/toko-online.png",
     link: "https://tokoku-dusky.vercel.app/",
   },
+  {
+    id: 18,
+    name: "Heyjong Community",
+    tools: "Next Js, Typescript, TailwindCSS",
+    image: "/images/community.png",
+    link: "https://community.heyjong.id/",
+  },
 ];
 
 export const listDesign = [
