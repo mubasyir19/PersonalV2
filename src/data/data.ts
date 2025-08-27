@@ -116,7 +116,7 @@ export const portfolios = [
     name: "TokoKu | Online Store",
     tools: "Next Js, Typescript, TailwindCSS, Express, Prisma ORM, MySQL",
     image: "/images/toko-online.png",
-    link: "https://github.com/mubasyir19/TokoKu-Web",
+    link: "https://tokoku-dusky.vercel.app/",
   },
 ];
 
