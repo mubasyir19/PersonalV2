@@ -125,6 +125,13 @@ export const portfolios = [
     image: "/images/community.png",
     link: "https://community.heyjong.id/",
   },
+  {
+    id: 19,
+    name: "Budget Tracker",
+    tools: "Next Js, Typescript, TailwindCSS, Express.js, Prisma ORM",
+    image: "/images/budget-tracker.png",
+    link: "https://github.com/mubasyir19/Budget-Tracker",
+  },
 ];
 
 export const listDesign = [
