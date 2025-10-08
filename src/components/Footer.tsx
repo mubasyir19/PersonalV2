@@ -38,7 +38,7 @@ export default function Footer() {
         </ul>
       </div>
       <p className="mt-6 text-center text-xs text-white lg:my-auto">
-        &copy;Copyright 2024. By Maher
+        &copy;Copyright 2025. By Maher
       </p>
     </footer>
   );
