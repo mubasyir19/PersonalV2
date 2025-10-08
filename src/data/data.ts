@@ -128,7 +128,8 @@ export const portfolios = [
   {
     id: 19,
     name: "Budget Tracker",
-    tools: "Next Js, Typescript, TailwindCSS, Express.js, Prisma ORM",
+    tools:
+      "Next Js, Typescript, TailwindCSS, Express.js, Prisma ORM, PostgreSQL",
     image: "/images/budget-tracker.png",
     link: "https://github.com/mubasyir19/Budget-Tracker",
   },
