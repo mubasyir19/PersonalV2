@@ -74,7 +74,16 @@ export default function Portfolio() {
                       </svg>
                     </Link>
                   </div>
-                  <p className="tex">{portoflio.tools}</p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    {portoflio.tools.map((tool, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-blue-400 bg-blue-900/30 px-3 py-1 text-center text-xs text-white"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             );
@@ -134,7 +143,16 @@ export default function Portfolio() {
                       </svg>
                     </Link>
                   </div>
-                  <p className="tex">{design.tools}</p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    {design.tools.map((tool, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-blue-400 bg-blue-900/30 px-3 py-1 text-center text-xs text-white"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             );
