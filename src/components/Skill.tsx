@@ -249,6 +249,20 @@ export default function Skill() {
           />
           <p className="mt-4 text-xl font-semibold">MySQL</p>
         </div>
+        <div
+          className="card w-full rounded-md border-2 border-[#002352] bg-gradient-to-tr from-blue-900 via-black to-black py-8 text-center"
+          data-aos="flip-left"
+          data-aos-duration="2000"
+        >
+          <Image
+            src="/icons/postgresql.png"
+            height={72}
+            width={72}
+            className="mx-auto h-20 w-auto"
+            alt="postgresql"
+          />
+          <p className="mt-4 text-xl font-semibold">PostgreSQL</p>
+        </div>
       </div>
       <p className="my-4 text-xl">Software / Tools</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-4">

@@ -160,6 +160,21 @@ export const portfolios = [
     image: "/images/budget-tracker.png",
     link: "https://github.com/mubasyir19/Budget-Tracker",
   },
+  {
+    id: 20,
+    name: "POS Waroeng",
+    tools: [
+      "Next.js",
+      "Typescript",
+      "TailwindCSS",
+      "Shadcn UI",
+      "Nest.js",
+      "Prisma ORM",
+      "PostgreSQL",
+    ],
+    image: "/images/pos-waroeng.png",
+    link: "https://github.com/mubasyir19/POS-Waroeng",
+  },
 ];
 
 export const listDesign = [
